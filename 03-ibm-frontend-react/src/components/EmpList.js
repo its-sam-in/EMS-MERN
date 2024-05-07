@@ -42,10 +42,11 @@ const EmpList = () => {
   };
 
   const handleUpdate = (emp) => {
+    setfirst(first+=1)
     console.log(emp);
     setUpdateData(emp);
     setShowUpdateModal(true);
-    setfirst(first+=1)
+    
   };
 
   const handleChange = (evt) => {
@@ -55,7 +56,8 @@ const EmpList = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    const updateUrl = `http://localhost:9090/emp/update-emp/${updateData.id}`;
+    console.log(updateData);
+    const updateUrl = `http://localhost:9090/emp/update-emp/${updateData.employeeId}`;
     axios
       .put(updateUrl, updateData)
       .then((resp) => {
