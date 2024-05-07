@@ -21,10 +21,16 @@ const Logout = () => {
 
     return (
         <>
-            <h1>Logout</h1>
-            <button onClick={logoutSubmit} >Logout</button>
-            {afterLogout && <p>{afterLogout}</p>}
-        </>
+    <div className="d-flex p-2 justify-content-center">
+        <h1 className="text-center fs-9 fw-bold bg-danger bg-gradient bg-opacity-15 text-white border rounded-2 d-inline p-2 border-dark border-2 shadow-lg">Logout Component</h1>
+    </div>
+
+    <div className="d-flex flex-column mt-5 mb-5 align-items-center gap-4">
+        <button onClick={logoutSubmit} className="btn btn-danger w-40">Logout</button>
+        {afterLogout && <p>{afterLogout}</p>}
+    </div>
+</>
+
     );
 };
 

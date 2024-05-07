@@ -11,7 +11,8 @@ const UserService = {
             return response.data;
         } catch (error) {
             console.log(error);
-            return error;
+            // return error;
+            throw new Error(error);
         }
     },
 
@@ -42,3 +43,41 @@ const UserService = {
 };
 
 export default UserService;
+
+
+
+
+
+
+
+
+
+
+// UserService  , using promise .then instead of async and await 
+
+
+// import axios from 'axios';
+
+// const BASE_URL = 'http://localhost:2000';
+
+// const UserService = {
+//         registerUser: (userData) => {
+//             return new Promise((resolve, reject) => {
+//                 axios.post(`${BASE_URL}/register`, userData)
+//                     .then((response) => {
+//                         resolve(response.data);
+//                     })
+//                     .catch((error) => {
+//                         console.log(error);
+//                         reject(error);
+//                     });
+//             });
+//         }
+//     };
+    
+
+  
+
+
+// export default UserService;
+

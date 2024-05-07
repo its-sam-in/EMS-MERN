@@ -35,30 +35,46 @@ const Register = () => {
             })
             .catch((error) => {
                 console.log(error);
-                setAfterRegisterMessage(`Invalid credentials!`);
+                setAfterRegisterMessage(`User Already Registered!`);
             });
 
     };
 
     return (
         <>
-            <h1>Register Component</h1>
-            <p>Register here</p>
-            <form onSubmit={handleRegisterSubmit}>
-                <input type="text" name="username" value={registerData.username}
-                    onChange={handleChange} autoFocus required />
-                <br />
-                <input type="password" name="password" value={registerData.password}
-                    onChange={handleChange} required />
-                <br />
-                <input type="submit" value="Register" />
+        <div className="d-flex p-2 justify-content-center">
+            <h1 className="text-center fs-9 fw-bold bg-success bg-gradient bg-opacity-20 text-white border rounded-2 border-opacity-50 d-inline p-2 border-primary border-2 shadow-lg">Register Component</h1>
+        </div>
+    
+        <div className="d-flex flex-column mt-5 mb-5 align-items-center gap-4">
+            <p className="text-center fs-1 fw-bold">Register here</p>
+            <form onSubmit={handleRegisterSubmit} className="d-flex flex-column gap-3 align-items-center">
+                <input
+                    type="text"
+                    name="username"
+                    value={registerData.username}
+                    onChange={handleChange}
+                    autoFocus
+                    required
+                    className="form-control w-100 border-2 shadow-sm"
+                    placeholder="Enter username"
+                />
+                <input
+                    type="password"
+                    name="password"
+                    value={registerData.password}
+                    onChange={handleChange}
+                    required
+                    className="form-control w-100 border-2 shadow-sm"
+                    placeholder="Enter password"
+                />
+                <button type="submit" className="btn btn-success w-50">Register</button>
             </form>
-            <>
-                <p>{afterRegisterMessage && afterRegisterMessage} </p>
-            </>
-            <p>Already registered? <Link to={'/login'}>Login</Link> </p>
-
-        </>
+            {afterRegisterMessage && <p>{afterRegisterMessage}</p>}
+            <p>Already registered? <Link to={'/login'} className="text-success">Login</Link></p>
+        </div>
+    </>
+    
     );
 };
 export default Register;

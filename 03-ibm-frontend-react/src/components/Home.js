@@ -3,7 +3,16 @@ const Home = () => {
 
     return (
         <>
-            <h1>Home Component</h1>
+        <div className="d-flex justify-content-center flex-column mb-3 align-items-center p-3">
+
+            <h1 className= 'text-center fs-9 fw-bold bg-danger bg-gradient bg-opacity-15 text-white border rounded-2 d-inline p-2 border-dark border-2 shadow-lg'>Home Component</h1>
+            {/* <img src="404.png"></img> */}
+
+            <div className="fs-1 fw-bold text-danger mt-5">
+                404 PAGE NOT FOUND !
+            </div>
+
+        </div>
         </>
     );
 };

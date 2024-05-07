@@ -42,19 +42,37 @@ const Login = () => {
 
     return (
         <>
-            <h1>Login Component</h1>
-            <p>Login here</p>
-            <form onSubmit={handleLoginSubmit}>
-                <input type="text" name="username" value={loginData.username}
-                    onChange={handleChange} autoFocus required />
-                <br />
-                <input type="password" name="password" value={loginData.password}
-                    onChange={handleChange} required />
-                <br />
-                <input type="submit" value="Login" />
-            </form>
-            {afterSubmit && <p>{afterSubmit}</p>}
-            <p>Not yet registered? <Link to={'/register'}>Register</Link> </p>
+            <div className="d-flex p-2 justify-content-center">
+        <h1 className="text-center fs-9 fw-bold bg-info bg-gradient bg-opacity-20 text-white border rounded-2 border-opacity-50 d-inline p-2 border-primary border-2 shadow-lg">Login Component</h1>
+    </div>
+
+    <div className="d-flex flex-column mt-5 mb-5 align-items-center gap-4">
+        <p className="text-center fs-1 fw-bold ">Login here</p>
+        <form onSubmit={handleLoginSubmit} className="d-flex flex-column gap-3 align-items-center">
+            <input
+                type="text"
+                name="username"
+                value={loginData.username}
+                onChange={handleChange}
+                autoFocus
+                required
+                className="form-control w-100 border-2 shadow-sm"
+                placeholder="Enter username"
+            />
+            <input
+                type="password"
+                name="password"
+                value={loginData.password}
+                onChange={handleChange}
+                required
+                className="form-control w-100 border-2 shadow-sm"
+                placeholder="Enter password"
+            />
+            <button type="submit" className="btn btn-primary w-50">Login</button>
+        </form>
+        {afterSubmit && <p>{afterSubmit}</p>}
+        <p>Not yet registered? <Link to={'/register'}>Register</Link></p>
+    </div>
         </>
     );
 };
