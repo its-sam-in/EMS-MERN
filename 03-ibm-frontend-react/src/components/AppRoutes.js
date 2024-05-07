@@ -9,6 +9,7 @@ import Register from './user/Register';
 import Profile from "./user/Profile";
 import Logout from './user/Logout';
 import { useSelector } from "react-redux";
+import GetEmployeeById from "./FindEmployeeById";
 
 const AppRoutes = () => {
 

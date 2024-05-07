@@ -6,6 +6,7 @@ const Employee = () => {
         <>
             <h1>Employee Component</h1>
             <AddEmployee />
+            
             <EmpList />
         </>
     );

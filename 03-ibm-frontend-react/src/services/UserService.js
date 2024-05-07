@@ -3,6 +3,7 @@
 import axios from 'axios';
 
 const BASE_URL = 'http://localhost:2000';
+const Spring_URL = 'http://localhost:9090/emp'
 
 const UserService = {
     registerUser: async (userData) => {
@@ -39,7 +40,23 @@ const UserService = {
             console.log(error);
             return error;
         }
-    }
+    },
+
+    findEmployeeById: (id) => {
+        return new Promise((resolve, reject) => {
+            axios.get(`${BASE_URL}/get-emp-by-id/${id}`)
+                .then((response) => {
+                    resolve(response.data);
+                })
+                .catch((error) => {
+                    console.error("Error finding employee:", error);
+                    reject(error);
+                });
+        });
+    },
+
+
+
 };
 
 export default UserService;
